@@ -13,12 +13,13 @@ function App() {
   const [ results, setResults ] = useState('');
   const [ nominations, setNominations ] = useState('');
   const [ resultsPageNum, setResultsPageNum ] = useState(1);
-
-  console.log(results.Search);
   
   return (
     <>
-      <Header />
+      <Header
+        maxNominations={ maxNominations }
+        nominations={ nominations }
+      />
       <Search 
         setResults={ setResults }
         baseURL={ baseURL }

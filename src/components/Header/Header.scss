@@ -1,0 +1,44 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.header {
+  border-bottom: 1px solid $fill-cta;
+  &__block {
+    @include flex(row, space-between, center);
+    &-link {
+      @include flex(row, center, center);
+      &-logo {
+        height: 36px;
+      }
+      &-text {
+        font-family: $ff-global-heading;
+        font-weight: 700;
+        font-size: 3rem;
+        margin: 20px 0px 12px 12px;
+      }
+    }
+    &-counter {
+      &-button {
+        @include flex(row, space-evenly, center);
+        background-color: transparent;
+        border: 1px solid $fill-cta;
+        border-radius: 20px;
+        height: 40px;
+        width: 200px;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          background-color: $fill-cta-hover;
+          border-radius: 8px;
+        }
+        &-count {
+          text-transform: uppercase;
+          font-size: 1.6rem;
+          font-weight: 700;
+        }
+        &-text {
+          @extend .header__block-counter-button-count
+        }
+      }
+    }
+  }
+}
