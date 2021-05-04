@@ -24,7 +24,7 @@ function Search({ setResults, baseURL, resultsPageNum }) {
     e.preventDefault();
     if (searchTerm !== '') {
       Axios
-      .get(`${baseURL}&s=${searchTerm}&type=movie&page=${resultsPageNum}`)
+      .get(`${baseURL}&t=${searchTerm}&type=movie&page=${resultsPageNum}`)
       .then((res) => {
         setResults(res.data);
       })
