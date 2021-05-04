@@ -3,12 +3,12 @@ import React from 'react'
 function Nominations({ nominations, setNominations }) {
   
   const handleRemoveNomination = (movieID) => {
-    console.log(movieID)
-    // let movie = { imdbID, Title, Year, Poster };
-    // setNominations([...nominations, movie]);
+    let filteredNominations = nominations.filter(movie => movie.imdbID!==movieID)
+    setNominations([filteredNominations]);
   }
 
-  if(nominations){
+
+  if(nominations.length!==0){
     return (
       <section>
         <ul>

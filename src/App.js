@@ -13,6 +13,8 @@ function App() {
   const [ results, setResults ] = useState('');
   const [ nominations, setNominations ] = useState('');
   const [ resultsPageNum, setResultsPageNum ] = useState(1);
+
+  console.log(results.Search);
   
   return (
     <>
