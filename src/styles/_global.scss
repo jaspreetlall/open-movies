@@ -1,0 +1,36 @@
+@import "../styles/variables";
+
+html {
+	box-sizing: border-box;
+	font-size: 10px;
+	background-color: $fill-global;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	font-family: $ff-global-body;
+  color: $color-global;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+// Global container class
+.container {
+	width: 87.5vw;
+	max-width: 512px;
+	margin-left: auto;
+	margin-right: auto;
+}
