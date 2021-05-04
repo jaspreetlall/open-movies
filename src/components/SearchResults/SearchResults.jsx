@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import {v4 as uuid} from 'uuid';
 
-function SearchResults({ results, maxNominations, nominations, setNominations, setPageNum}) {
+function SearchResults({ results, maxNominations, nominations, setNominations, setPageNum }) {
 
   let isButtonDisabled = (!(nominations.length<maxNominations));
 
@@ -16,7 +17,7 @@ function SearchResults({ results, maxNominations, nominations, setNominations, s
           {
             results.Search.map(movie => {
               return (
-                <li key={movie.imdbID}>
+                <li key={uuid()}>
                   <div>
                     <img src={movie.Poster} alt=""/>
                   </div>
