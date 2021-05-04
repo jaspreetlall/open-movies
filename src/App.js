@@ -9,6 +9,7 @@ const baseURL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API
 
 function App() {
 
+  const maxNominations = 5;
   const [ results, setResults ] = useState('');
   const [ nominations, setNominations ] = useState('');
   const [ resultsPageNum, setResultsPageNum ] = useState(1);
@@ -23,10 +24,15 @@ function App() {
       />
       <SearchResults
         results={ results }
+        maxNominations={ maxNominations }
+        nominations={ nominations }
         setNominations={ setNominations }
         setResultsPageNum={ setResultsPageNum }
       />
-      <Nominations nominations={ nominations }/>
+      <Nominations
+        nominations={ nominations }
+        setNominations={ setNominations }
+      />
     </>
   );
 }
