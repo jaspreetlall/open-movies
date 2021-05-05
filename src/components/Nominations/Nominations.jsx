@@ -9,7 +9,9 @@ function Nominations({ nominations, setNominations, nominationsVisibility }) {
     setNominations(nominations.filter(movie => movie.imdbID!==movieID));
   }
 
-  const isNominationsVisible = nominationsVisibility ? "nominations nominations--visible" : "nominations--hidden";
+  const isNominationsVisible = nominationsVisibility
+    ? "nominations nominations--visible"
+    : "nominations nominations--hidden";
 
   if(nominations.length!==0){
     return (
