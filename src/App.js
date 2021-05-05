@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Search from './components/Search/Search';
 import SearchResults from './components/SearchResults/SearchResults';
 import Nominations from './components/Nominations/Nominations';
+import NotificationModal from './components/NotificationModal/NotificationModal';
 
 const baseURL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`;
 
@@ -14,6 +15,9 @@ function App() {
   const [ nominations, setNominations ] = useState('');
   const [ nominationsVisibility, setNominationsVisibility ] = useState(false);
   const [ resultsPageNum, setResultsPageNum ] = useState(1);
+  const [ needNotification, setNeedNotification ] = useState(true);
+
+  let notificationVisibility = nominations.length===5 && needNotification;
   
   return (
     <>
@@ -38,8 +42,12 @@ function App() {
       />
       <Nominations
         nominations={ nominations }
-        nominationsVisibility={ nominationsVisibility }
         setNominations={ setNominations }
+        nominationsVisibility={ nominationsVisibility }
+      />
+      <NotificationModal
+        notificationVisibility={ notificationVisibility }
+        setNeedNotification={ setNeedNotification }
       />
     </>
   );
