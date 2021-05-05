@@ -12,6 +12,7 @@ function App() {
   const maxNominations = 5;
   const [ results, setResults ] = useState('');
   const [ nominations, setNominations ] = useState('');
+  const [ nominationsVisibility, setNominationsVisibility ] = useState(false);
   const [ resultsPageNum, setResultsPageNum ] = useState(1);
   
   return (
@@ -19,6 +20,8 @@ function App() {
       <Header
         maxNominations={ maxNominations }
         nominations={ nominations }
+        nominationsVisibility={ nominationsVisibility }
+        setNominationsVisibility={ setNominationsVisibility }
       />
       <Search 
         setResults={ setResults }
@@ -35,6 +38,7 @@ function App() {
       />
       <Nominations
         nominations={ nominations }
+        nominationsVisibility={ nominationsVisibility }
         setNominations={ setNominations }
       />
     </>
