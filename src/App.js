@@ -30,6 +30,7 @@ function App() {
         maxNominations={ maxNominations }
         nominations={ nominations }
         setNominations={ setNominations }
+        resultsPageNum={ resultsPageNum }
         setResultsPageNum={ setResultsPageNum }
       />
       <Nominations

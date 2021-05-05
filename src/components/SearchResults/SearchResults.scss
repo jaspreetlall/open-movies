@@ -1,0 +1,109 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.results {
+  &__block {
+    @include flex(column, flex-start, center);
+    &-heading {
+      font-size: 2rem;
+    }
+    &-list {
+      @include flex(column, flex-start, center);
+      width: 100%;
+      padding: 0;
+      &-item {
+        @include flex(row, flex-start, center);
+        background-color: $fill-dark-faded;
+        border-right: 6px solid $fill-light;
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 24px;
+        &:hover {
+          border-right: 6px solid $fill-cta-hover;
+        }
+        &-poster {
+          height: 160px;
+          width: 120px;
+          margin-right: 16px;
+          &-img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &-desc {
+          @include flex(column, flex-start, flex-start);
+          align-self: flex-start;
+          width: calc(100% - 136px);
+          height: 160px;
+          &-title {
+            font-size: 1.875rem;
+            margin: 16px 0 16px 0;
+          }
+          &-year {
+            font-size: 1.2rem;
+          }
+          &-button {
+            align-self: flex-end;
+            margin: 10px 24px 0 0;
+            background-color: $fill-cta;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            height: 40px;
+            width: 100px;
+            transition: all 0.2s ease-in-out;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: $text-shadow;
+            &:hover {
+              background-color: $fill-cta-hover;
+              border-radius: 8px;
+            }
+            &:disabled {
+              background-color: $fill-disabled;
+            }
+          }
+        }
+      }
+    }
+    &-page {
+      @include flex(row, center, center);
+      margin: 16px;
+      &-button {
+        align-self: flex-end;
+        background-color: transparent;
+        border: 1px solid $fill-light;
+        height: 40px;
+        width: 68px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: $text-shadow;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          border: 1px solid $fill-cta-hover;
+        }
+        &--prev {
+          border-radius: 20px 0 0 20px;
+          &:hover {
+            border-radius: 8px 0 0 8px;
+          }
+        }
+        &--next {
+          border-radius: 0 20px 20px 0;
+          &:hover {
+            border-radius: 0 8px 8px 0;
+          }
+        }
+      }
+      &-numbers {
+        @include flex-center;
+        font-size: 1.16rem;
+        text-align: center;
+        height: 40px;
+        width: 80px;
+        border-top: 1px solid $fill-light;
+        border-bottom: 1px solid $fill-light;
+      }
+    }
+  }
+}
