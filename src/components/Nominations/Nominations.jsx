@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
+import {v4 as uuid} from 'uuid';
 
 function Nominations({ nominations, setNominations }) {
   
   const handleRemoveNomination = (movieID) => {
-    let filteredNominations = nominations.filter(movie => movie.imdbID!==movieID)
-    setNominations([filteredNominations]);
+    setNominations(nominations.filter(movie => movie.imdbID!==movieID));
   }
 
 
@@ -15,7 +15,7 @@ function Nominations({ nominations, setNominations }) {
           {
             nominations.map(movie => {
               return (
-                <li key={movie.imdbID}>
+                <li key={uuid()}>
                   <div>
                     <img src={movie.Poster} alt=""/>
                   </div>
