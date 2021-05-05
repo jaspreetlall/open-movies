@@ -5,8 +5,12 @@ $fill-cta: #90b945;
 $fill-cta-hover: #5b8a3c;
 $fill-disabled: #50312e5d;
 $fill-input: #eeedf0;
-$fill-dark-faded: #5051585d;
+$fill-dark-faded: #50515828;
+$fill-popup: #131314d0;
+$fill-blocked-view:  rgba(26, 26, 26, 0.877);
 $fill-light: #eeedf0c5;
+$fill-warning: #b94545;
+$fill-warning-hover: #772f2f;
 
 $color-global: #eeedf0;
 $color-light: #eeedf0c5;
@@ -14,6 +18,7 @@ $color-dark: #202124;
 
 $drop-shadow: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.6));
 $text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+$glow-popup: 2px 2px 5px 2px rgba(144,185,69,0.3);
 
 $ff-global-body: 'Roboto', sans-serif;
 $ff-global-heading: 'SairaCondensed', sans-serif;

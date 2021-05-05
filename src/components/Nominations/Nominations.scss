@@ -1,10 +1,96 @@
 @import '../../styles/mixins';
 @import '../../styles/variables';
 
-.visible {
-  display: block;
-}
-
-.hidden {
-  display: none;
+.nominations {
+  position: absolute;
+  background-color: $fill-blocked-view;
+  width: 100%;
+  height: 100vh;
+  &--visible {
+    @include flex(row, flex-end, flex-start);
+    top: 80px;
+    right: 0;
+  }
+  &--hidden {
+    display: none;
+  }
+  &__block {
+    background-color: $fill-popup;
+    border-radius: 20px;
+    box-shadow: $glow-popup;
+    padding: 24px;
+    max-height: 640px;
+    width: 374px;
+    margin-right: 20px;
+    position: relative;
+    top: -20px;
+    &-title {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+    &-list {
+      padding: 0;
+      &-item {
+        @include flex(row, flex-start, flex-start);
+        background-color: $fill-dark-faded;
+        border: 1px solid transparent;
+        border-radius: 24px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        height: 90px;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          border: 1px solid $fill-cta-hover;
+        }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        &-poster {
+          height: 90px;
+          width: 70px;
+          &-img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+          }
+        }
+        &-desc {
+          @include flex(column, space-between, flex-start);
+          margin-left: 10px;
+          height: 100%;
+          width: calc(100% - 70px);
+          &-title {
+            margin: 8px 0 0 0;
+            font-size: 1.6rem;
+          }
+          &-year {
+            margin: 0;
+            font-size: 1.2rem;
+          }
+          &-button {
+            align-self: flex-end;
+            background-color: transparent;
+            border: 1px solid $fill-warning;
+            border-radius: 24px;
+            height: 32px;
+            width: 48px;
+            transition: all 0.2s ease-in-out;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: $text-shadow;
+            margin: 0 12px 8px 0;
+            &:hover {
+              background-color: $fill-warning-hover;
+              border: 2px solid $fill-warning-hover;
+              border-radius: 8px;
+            }
+            &-icon {
+              height: 24px;
+              filter: $drop-shadow;
+            }
+          }
+        }
+      }
+    }
+  }
 }

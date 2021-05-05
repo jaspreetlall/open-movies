@@ -3,6 +3,7 @@
 
 .header {
   border-bottom: 1px solid $fill-cta;
+  height: 80px;
   &__block {
     @include flex(row, space-between, center);
     &-link {
