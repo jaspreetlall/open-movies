@@ -1,0 +1,59 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.search {
+  @include flex-center;
+  min-height: 400px;
+  &__block {
+    @include flex(column, center, center);
+    &-headings {
+      text-align: center;
+      &-title {
+        font-family: $ff-global-heading;
+        font-size: 6rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      &-slogan {
+        margin: 0;
+        font-size: 2rem;
+        color: $color-light;
+      }
+    }
+    &-form {
+      @include flex-center;
+      width: 100%;
+      margin: 32px;
+      text-align: center;
+      &-input {
+        background-color: $fill-input;
+        border: 1px solid transparent;
+        border-radius: 20px 0 0 20px;
+        font-weight: 700;
+        height: 40px;
+        width: 100%;
+        max-width: 500px;
+        transition: all 0.2s ease-in-out;
+        padding-left: 16px;
+        &:focus {
+          border-radius: 8px 0 0 8px;
+        }
+      }
+      &-button {
+        @include flex-center;
+        background-color: $fill-cta;
+        border: 1px solid transparent;
+        border-radius: 0 20px 20px 0;
+        height: 40px;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          background-color: $fill-cta-hover;
+          border-radius: 0 8px 8px 0;
+        }
+        &-icon {
+          height: 32px;
+        }
+      }
+    }
+  }
+}
