@@ -3,7 +3,7 @@ import './Search.scss';
 import Axios from 'axios';
 import SearchIcon from '../../assets/icons/search.svg'
 
-function Search({ setResults, baseURL, resultsPageNum }) {
+function Search({ setResults, baseURL, resultsPageNum, setResultsPageNum }) {
 
   const [ searchTerm, setSearchTerm ] = useState('');
 
@@ -19,11 +19,13 @@ function Search({ setResults, baseURL, resultsPageNum }) {
   }, [searchTerm, baseURL, resultsPageNum, setResults])
 
   const handleInputChange = (e) => {
+    setResultsPageNum(1);
     setSearchTerm(e.target.value);
   }
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setResultsPageNum(1);
     if (searchTerm !== '') {
       Axios
       .get(`${baseURL}&t=${searchTerm}&type=movie&page=${resultsPageNum}`)

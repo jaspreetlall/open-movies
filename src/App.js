@@ -31,6 +31,7 @@ function App() {
         setResults={ setResults }
         baseURL={ baseURL }
         resultsPageNum={ resultsPageNum }
+        setResultsPageNum={ setResultsPageNum }
       />
       <SearchResults
         results={ results }
