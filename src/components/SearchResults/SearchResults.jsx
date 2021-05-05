@@ -11,16 +11,24 @@ function SearchResults({ results, maxNominations, nominations, setNominations, r
     setNominations([...nominations, movie]);
   }
 
+  const handleNextPage = () => {
+    if ((results.totalResults/10 > 1) && (resultsPageNum < Math.floor(results.totalResults/10))) {
+      setResultsPageNum(resultsPageNum+1);
+    }
+  }
+
+  const handlePrevPage = () => {
+    if (resultsPageNum > 1) {
+      setResultsPageNum(resultsPageNum-1);
+    }
+  }
+
   if(results.Search){
     return (
       <section className="results">
         <div className="results__block container">
           <h3 className="results__block-heading">{results.totalResults} movies found</h3>
-          <div className="results__block-page">
-            <button className="results__block-page-button results__block-page-button--prev">Prev</button>
-            <div className="results__block-page-numbers">Page {resultsPageNum} of {Math.floor(results.totalResults/10)+1}</div>
-            <button className="results__block-page-button results__block-page-button--next">Next</button>
-          </div>
+          
           <ul className="results__block-list">
             {
               results.Search.map(movie => {
@@ -46,9 +54,14 @@ function SearchResults({ results, maxNominations, nominations, setNominations, r
             }
           </ul>
           <div className="results__block-page">
-            <button className="results__block-page-button results__block-page-button--prev">Prev</button>
-            <div className="results__block-page-numbers">Page {resultsPageNum} of {Math.floor(results.totalResults/10)+1}</div>
-            <button className="results__block-page-button results__block-page-button--next">Next</button>
+            <button onClick={handlePrevPage} className="results__block-page-button results__block-page-button--prev">Prev</button>
+            <div className="results__block-page-numbers">
+              Page {resultsPageNum} of { (results.totalResults/10 <1)
+                ? Math.floor(results.totalResults/10) + 1
+                : Math.floor(results.totalResults/10)
+              } 
+            </div>
+            <button onClick={handleNextPage} className="results__block-page-button results__block-page-button--next">Next</button>
           </div>
         </div>
       </section>
