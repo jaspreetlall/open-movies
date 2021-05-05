@@ -1,5 +1,5 @@
 import './App.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header/Header';
 import Search from './components/Search/Search';
 import SearchResults from './components/SearchResults/SearchResults';
@@ -18,6 +18,17 @@ function App() {
   const [ needNotification, setNeedNotification ] = useState(true);
 
   let notificationVisibility = nominations.length===5 && needNotification;
+
+  useEffect(() => {
+    const data = localStorage.getItem("nominations");
+    if (data) {
+      setNominations(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("nominations", JSON.stringify(nominations));
+  });
   
   return (
     <>
