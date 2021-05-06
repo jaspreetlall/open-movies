@@ -4,8 +4,6 @@ import './SearchResults.scss';
 
 function SearchResults({ results, maxNominations, nominations, setNominations, resultsPageNum, setResultsPageNum }) {
 
-  let isButtonDisabled = (!(nominations.length<maxNominations));
-
   const handleNominate = (imdbID, Title, Year, Poster) => {
     let movie = { imdbID, Title, Year, Poster };
     setNominations([...nominations, movie]);
@@ -32,6 +30,7 @@ function SearchResults({ results, maxNominations, nominations, setNominations, r
           <ul className="results__block-list">
             {
               results.Search.map(movie => {
+                let isNominated = nominations.filter(item => item.imdbID === movie.imdbID).length>0;
                 return (
                   <li className="results__block-list-item" key={uuid()}>
                     <div className="results__block-list-item-poster">
@@ -43,7 +42,7 @@ function SearchResults({ results, maxNominations, nominations, setNominations, r
                       <button
                         className="results__block-list-item-desc-button"
                         onClick={() => handleNominate(movie.imdbID, movie.Title, movie.Year, movie.Poster)}
-                        disabled={isButtonDisabled}
+                        disabled={isNominated || !(nominations.length<maxNominations)}
                       >
                         Nominate
                       </button>
