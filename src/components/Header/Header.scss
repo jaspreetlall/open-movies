@@ -27,6 +27,9 @@
         height: 40px;
         width: 200px;
         transition: all 0.2s ease-in-out;
+        @include mobile {
+          width: 160px;
+        }
         &:hover {
           background-color: $fill-cta-hover;
           border-radius: 8px;
@@ -35,6 +38,10 @@
           text-transform: uppercase;
           font-size: 1.6rem;
           font-weight: 700;
+          @include mobile {
+            font-size: 1.2rem;
+            font-weight: 400;
+          }
         }
         &-text {
           @extend .header__block-counter-button-count
