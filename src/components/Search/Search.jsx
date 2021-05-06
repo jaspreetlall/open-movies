@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Search.scss';
 import Axios from 'axios';
-import SearchIcon from '../../assets/icons/search.svg'
+import SearchIcon from '../../assets/icons/search.svg';
+import AwardsImage from '../../assets/images/awards.jpg';
 
 function Search({ setResults, baseURL, resultsPageNum, setResultsPageNum }) {
 
@@ -39,9 +40,9 @@ function Search({ setResults, baseURL, resultsPageNum, setResultsPageNum }) {
   return (
     <section className="search">
       <div className="search__block container">
-        <div className="search__block-headings">
-          <h1 className="search__block-headings-title">Shoppies</h1>
-          <h2 className="search__block-headings-slogan">Movie awards for entrepreneurs</h2>
+        <div className="search__block-hero">
+          <h1 className="search__block-hero-title">Shoppies</h1>
+          <h2 className="search__block-hero-slogan">Movie awards for entrepreneurs</h2>
         </div>
         <form className="search__block-form" onSubmit={submitHandler}>
           <input

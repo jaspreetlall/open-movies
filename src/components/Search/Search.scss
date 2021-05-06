@@ -3,21 +3,39 @@
 
 .search {
   @include flex-center;
-  min-height: 400px;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url(../../assets/images/awards.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+  @include tablet {
+    min-height: 500px;
+  }
+  @include mobile {
+    min-height: 300px;
+  }
   &__block {
     @include flex(column, center, center);
-    &-headings {
+    &-hero {
       text-align: center;
       &-title {
         font-family: $ff-global-heading;
         font-size: 6rem;
         font-weight: 700;
         margin: 0;
+        @include mobile {
+          font-size: 5.4rem;
+        }
       }
       &-slogan {
         margin: 0;
         font-size: 2rem;
         color: $color-light;
+        @include mobile {
+          font-size: 1.8rem;
+        }
       }
     }
     &-form {
