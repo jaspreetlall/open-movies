@@ -51,6 +51,7 @@ function App() {
         setNominations={ setNominations }
         resultsPageNum={ resultsPageNum }
         setResultsPageNum={ setResultsPageNum }
+        setNeedNotification={ setNeedNotification }
       />
       <Nominations
         nominations={ nominations }

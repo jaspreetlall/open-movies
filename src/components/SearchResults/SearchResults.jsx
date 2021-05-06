@@ -2,11 +2,20 @@ import React from 'react';
 import {v4 as uuid} from 'uuid';
 import './SearchResults.scss';
 
-function SearchResults({ results, maxNominations, nominations, setNominations, resultsPageNum, setResultsPageNum }) {
+function SearchResults({
+  results,
+  maxNominations,
+  nominations,
+  setNominations,
+  resultsPageNum,
+  setResultsPageNum,
+  setNeedNotification
+}){
 
   const handleNominate = (imdbID, Title, Year, Poster) => {
     let movie = { imdbID, Title, Year, Poster };
     setNominations([...nominations, movie]);
+    setNeedNotification(true);
   }
 
   const handleNextPage = () => {
