@@ -30,12 +30,31 @@ function SearchResults({
     }
   }
 
+  const Paginator = () => {
+    return (
+      <div className="results__block-page">
+        <button onClick={handlePrevPage} className="results__block-page-button results__block-page-button--prev">Prev</button>
+        <div className="results__block-page-numbers">
+          Page {resultsPageNum} of { (results.totalResults/10 <1)
+            ? Math.floor(results.totalResults/10) + 1
+            : Math.floor(results.totalResults/10)
+          } 
+        </div>
+        <button onClick={handleNextPage} className="results__block-page-button results__block-page-button--next">Next</button>
+      </div>
+    )
+  }
+
   if(results.Search){
     return (
       <section className="results">
         <div className="results__block container">
           <h3 className="results__block-heading">{results.totalResults} movies found</h3>
-          
+          {
+            (results.totalResults/10 > 1)
+            ? <Paginator />
+            : (<></>)
+          }
           <ul className="results__block-list">
             {
               results.Search.map(movie => {
@@ -61,16 +80,11 @@ function SearchResults({
               })
             }
           </ul>
-          <div className="results__block-page">
-            <button onClick={handlePrevPage} className="results__block-page-button results__block-page-button--prev">Prev</button>
-            <div className="results__block-page-numbers">
-              Page {resultsPageNum} of { (results.totalResults/10 <1)
-                ? Math.floor(results.totalResults/10) + 1
-                : Math.floor(results.totalResults/10)
-              } 
-            </div>
-            <button onClick={handleNextPage} className="results__block-page-button results__block-page-button--next">Next</button>
-          </div>
+          {
+            (results.totalResults/10 > 1)
+            ? <Paginator />
+            : (<></>)
+          }
         </div>
       </section>
     )

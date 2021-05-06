@@ -8,17 +8,27 @@
       font-size: 2rem;
     }
     &-list {
-      @include flex(column, flex-start, center);
-      width: 100%;
+      @include flex(row, space-between, center);
       padding: 0;
+      width: 100%;
+      flex-wrap: wrap;
       &-item {
         @include flex(row, flex-start, center);
         background-color: $fill-dark-faded;
         border-right: 6px solid $fill-light;
-        width: 100%;
-        max-width: 500px;
-        margin-bottom: 24px;
+        margin: 0 24px 24px 0;
         transition: all 0.2s ease-in-out;
+        width: calc(50% - 12px);
+        @include mobile {
+          @include flex(column, flex-start, flex-start);
+        }
+        @include tablet {
+          width: 100%;
+          margin-right: 0;
+        }
+        &:nth-of-type(2n) {
+          margin-right: 0;
+        }
         &:hover {
           border-right: 6px solid $fill-cta-hover;
         }
@@ -26,6 +36,10 @@
           height: 160px;
           width: 120px;
           margin-right: 16px;
+          @include mobile {
+            width: 100%;
+            height: 180px;
+          }
           &-img {
             object-fit: cover;
             height: 100%;
@@ -37,12 +51,33 @@
           align-self: flex-start;
           width: calc(100% - 136px);
           height: 160px;
+          padding: 2px 5px;
+          white-space: nowrap;
+          @include mobile {
+            @include flex(column, space-between, flex-start);
+            width: 100%;
+            height: 148px;
+          }
           &-title {
+            display: inline-block;
+            overflow: hidden;
+            width: 300px;
             font-size: 1.875rem;
             margin: 16px 0 16px 0;
+            text-overflow: ellipsis;
+            @include tablet {
+              width: 500px;
+            }
+            @include mobile {
+              width: 320px;
+              margin: 12px 0 0 12px;
+            }
           }
           &-year {
             font-size: 1.2rem;
+            @include mobile {
+              margin-left: 12px;
+            }
           }
           &-button {
             align-self: flex-end;
@@ -56,6 +91,9 @@
             font-weight: 700;
             text-transform: uppercase;
             text-shadow: $text-shadow;
+            @include mobile {
+              margin: 0 12px 12px 0;
+            }
             &:hover {
               background-color: $fill-cta-hover;
               border-radius: 8px;
@@ -69,7 +107,7 @@
     }
     &-page {
       @include flex(row, center, center);
-      margin: 16px;
+      margin: 24px 0 40px 0;
       &-button {
         align-self: flex-end;
         background-color: transparent;
