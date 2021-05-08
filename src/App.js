@@ -21,14 +21,14 @@ function App() {
 
   useEffect(() => {
     const data = localStorage.getItem("nominations");
-    if (data) {
+    if (data && data!=="") {
       setNominations(JSON.parse(data));
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem("nominations", JSON.stringify(nominations));
-  });
+  },[nominations]);
   
   return (
     <>

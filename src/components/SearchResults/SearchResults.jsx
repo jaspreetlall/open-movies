@@ -58,7 +58,7 @@ function SearchResults({
           <ul className="results__block-list">
             {
               results.Search.map(movie => {
-                let isNominated = nominations.filter(item => item.imdbID === movie.imdbID).length>0;
+                let isNominated = Array.isArray(nominations) && nominations.length>0 && (nominations.filter(item => item.imdbID === movie.imdbID).length>0);
                 return (
                   <li className="results__block-list-item" key={uuid()}>
                     <div className="results__block-list-item-poster">

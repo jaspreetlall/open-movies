@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Search.scss';
 import Axios from 'axios';
 import SearchIcon from '../../assets/icons/search.svg';
-import AwardsImage from '../../assets/images/awards.jpg';
 
 function Search({ setResults, baseURL, resultsPageNum, setResultsPageNum }) {
 
