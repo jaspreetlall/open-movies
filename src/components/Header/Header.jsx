@@ -9,7 +9,7 @@ function Header({ maxNominations, nominations, nominationsVisibility, setNominat
   }
 
   return (
-    <nav className="header">
+    <header className="header">
       <div className="header__block container">
         <a className="header__block-link" href="/">
           <img className="header__block-link-logo" src={ShopifyLogo} alt="Shopify Logo"/>
@@ -22,7 +22,7 @@ function Header({ maxNominations, nominations, nominationsVisibility, setNominat
           </button>
         </div>
       </div>
-    </nav>
+    </header>
   )
 }
 

@@ -4,14 +4,14 @@
 .header {
   background-color: $fill-global;
   border-bottom: 1px solid $fill-cta;
-  height: 80px;
+  height: $height-header;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 2;
   & + * {
-		margin-top: 80px;
+		margin-top: $height-header;
 	}
   &__block {
     @include flex(row, space-between, center);
@@ -25,6 +25,13 @@
         font-weight: 700;
         font-size: 3rem;
         margin: 20px 0px 12px 12px;
+        text-decoration-color: transparent;
+        transition: $global-transition;
+      }
+      &:hover .header__block-link-text {
+        text-decoration: underline $fill-cta-hover 2px;
+        text-underline-position: under;
+        text-underline-offset: 2px;
       }
     }
     &-counter {
@@ -35,7 +42,7 @@
         border-radius: 20px;
         height: 40px;
         width: 200px;
-        transition: all 0.2s ease-in-out;
+        transition: $global-transition;
         @include mobile {
           width: 160px;
         }

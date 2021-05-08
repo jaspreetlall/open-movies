@@ -9,12 +9,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 600px;
-  @include tablet {
-    min-height: 500px;
-  }
+  height: calc(100vh - #{$height-footer} - #{$height-header} - (#{$margin-footer}*2));
   @include mobile {
-    min-height: 300px;
+    height: calc(100vh - #{$height-footer-mobile} - #{$height-header} - (#{$margin-footer}*2));
   }
   &__block {
     @include flex(column, center, center);

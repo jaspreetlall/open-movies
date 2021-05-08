@@ -5,6 +5,7 @@ import Search from './components/Search/Search';
 import SearchResults from './components/SearchResults/SearchResults';
 import Nominations from './components/Nominations/Nominations';
 import NotificationModal from './components/NotificationModal/NotificationModal';
+import Footer from './components/Footer/Footer';
 
 const baseURL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`;
 
@@ -62,6 +63,7 @@ function App() {
         notificationVisibility={ notificationVisibility }
         setNeedNotification={ setNeedNotification }
       />
+      <Footer />
     </>
   );
 }
