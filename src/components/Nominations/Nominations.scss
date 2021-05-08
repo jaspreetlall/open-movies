@@ -18,9 +18,9 @@
   }
   &__block {
     background-color: $fill-popup;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: $glow-popup;
-    padding: 24px;
+    padding: 20px 16px;
     max-height: 640px;
     width: 340px;
     margin-right: 20px;
@@ -36,10 +36,10 @@
         @include flex(row, flex-start, flex-start);
         background-color: $fill-dark-faded;
         border: 1px solid transparent;
-        border-radius: 24px;
+        border-radius: 10px;
         margin-bottom: 16px;
         overflow: hidden;
-        height: 90px;
+        height: 102px;
         transition: $global-transition;
         &:hover {
           border: 1px solid $fill-cta-hover;
@@ -48,7 +48,7 @@
           margin-bottom: 0;
         }
         &-poster {
-          height: 90px;
+          height: 102px;
           width: 70px;
           &-img {
             object-fit: cover;
