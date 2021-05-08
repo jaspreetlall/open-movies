@@ -7,7 +7,7 @@ import Nominations from './components/Nominations/Nominations';
 import NotificationModal from './components/NotificationModal/NotificationModal';
 import Footer from './components/Footer/Footer';
 
-const baseURL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`;
+const baseURL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}`;
 
 function App() {
 
