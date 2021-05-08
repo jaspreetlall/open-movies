@@ -11,16 +11,25 @@
     @include flex(row, space-around, center);
     height: 100%;
     @include mobile {
-      @include flex(column, flex-start, center);
+      @include flex(column, space-between, center);
     }
     &-credits {
       text-align: center;
+      @include mobile {
+        margin-bottom: 20px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
       &-heading {
         margin-top: 0;
         text-transform: uppercase;
         color: $color-light;
         font-size: 1.275rem;
         font-weight: 400;
+        @include mobile {
+          margin-bottom: 8px;
+        }
       }
       &-link {
         text-transform: uppercase;
