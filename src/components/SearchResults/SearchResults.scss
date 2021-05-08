@@ -17,7 +17,7 @@
         background-color: $fill-dark-faded;
         border-right: 6px solid $fill-light;
         margin: 0 24px 24px 0;
-        transition: all 0.2s ease-in-out;
+        transition: $global-transition;
         width: calc(50% - 12px);
         @include mobile {
           @include flex(column, flex-start, flex-start);
@@ -87,7 +87,7 @@
             border-radius: 20px;
             height: 40px;
             width: 100px;
-            transition: all 0.2s ease-in-out;
+            transition: $global-transition;
             font-weight: 700;
             text-transform: uppercase;
             text-shadow: $text-shadow;
@@ -117,7 +117,7 @@
         font-weight: 700;
         text-transform: uppercase;
         text-shadow: $text-shadow;
-        transition: all 0.2s ease-in-out;
+        transition: $global-transition;
         &:hover {
           border: 1px solid $fill-cta-hover;
         }

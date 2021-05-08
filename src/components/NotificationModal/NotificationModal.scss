@@ -40,7 +40,7 @@
       border-radius: 20px;
       height: 40px;
       width: 100px;
-      transition: all 0.2s ease-in-out;
+      transition: $global-transition;
       font-weight: 700;
       text-transform: uppercase;
       text-shadow: $text-shadow;

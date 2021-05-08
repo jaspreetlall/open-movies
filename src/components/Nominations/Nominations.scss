@@ -40,7 +40,7 @@
         margin-bottom: 16px;
         overflow: hidden;
         height: 90px;
-        transition: all 0.2s ease-in-out;
+        transition: $global-transition;
         &:hover {
           border: 1px solid $fill-cta-hover;
         }
@@ -76,7 +76,7 @@
             border-radius: 24px;
             height: 32px;
             width: 48px;
-            transition: all 0.2s ease-in-out;
+            transition: $global-transition;
             font-weight: 700;
             text-transform: uppercase;
             text-shadow: $text-shadow;
