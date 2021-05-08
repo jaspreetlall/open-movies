@@ -11,7 +11,7 @@ function Footer() {
         </div>
         <div className="footer__block-credits">
           <h4 className="footer__block-credits-heading">OMDb API by:</h4>
-          <a className="footer__block-credits-link" href="https://https://www.omdbapi.com/">Brian Fritz</a>
+          <a className="footer__block-credits-link" href="https://www.omdbapi.com/">Brian Fritz</a>
         </div>
         <div className="footer__block-credits">
           <h4 className="footer__block-credits-heading">Cover photo by:</h4>
